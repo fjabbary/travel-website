@@ -1,0 +1,282 @@
+
+body {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*=================================== 
+  =====Styles for header section ==== */
+  
+header {
+  background: #fff;
+  padding: 10px;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+a.logo {
+  line-height: 40px;
+  color: #2d3982;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 35px;
+  font-size: 140%;
+}
+
+a.logo:hover {
+  transform: scale(1.2) rotate(-5deg);
+  transition: all 0.2s;
+  background-image: linear-gradient(to right, #2d3982, #e37889);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+nav {
+ float: right;
+ margin-right: 40px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 10px 0 0 0;
+}
+
+nav ul li {
+ display: inline-block;
+ margin-right: 25px;
+ padding-bottom: 10px;
+}
+
+li.active {
+  border-bottom: 3px solid #e37889;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+}
+ 
+header li a:hover {
+  color: #e37889;
+  border-bottom: 3px solid #e37889;
+  padding-bottom: 10px;
+  transition: border-bottom .3s;
+}
+
+/*=================================== 
+  =====Styles for slogan section ===== */
+
+section#slogan {
+  background: #f8f8f8;
+  padding: 50px 80px 10px;
+  text-align: left;
+  color: #101d42;
+}
+
+.description_left {
+  width: 50%;
+  display: inline-block;
+  position: relative;
+  bottom: 60px;
+  animation-name: moveInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+.image_right {
+  width: 49%;
+  display: inline-block;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+.image_right img {
+  width: 100%;
+  height: 100%;
+}
+
+#slogan h1 {
+  font-size: 2rem;
+  font-family: "Comic Sans MS", sans-serif;
+}
+
+#slogan .btn {
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  background: #5969d0;
+  padding: 10px 40px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+#slogan .btn:hover {
+  transform: translateY(-5px);
+  transition: all .3s;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3)
+}
+
+#slogan .btn:active {
+  transform: translateY(0);
+  transition: all .3s;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+/*=================================== 
+  =====Styles for recommendation section ===== */
+
+#recommendation h2 {
+    color: #101d42;
+    padding: 20px 80px;
+  }
+
+#recommendation .row {
+   padding: 0 150px;
+}
+
+.card {
+  width: 30%;
+  height: 400px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,0, 0.2);
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+  position: relative;
+  display: inline-block;
+  margin-right: 2.5%;
+}
+
+.card-1 {
+  background-image: url(../images/hawaii.jpg);
+}
+
+.card-2 {
+  background-image: url(../images/iceland.jpg);
+}
+
+.card-3 {
+  background-image: url(../images/greece.jpg);
+}
+
+.card p {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  color: #fff;
+  font-size: 25px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.card a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  transform: scale(1.05);
+  transition: all .3s;
+}
+
+/*=================================== 
+  ===== Animations ===== */
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  80% {
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+  80% {
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/*=================================== 
+  ===== Responsive for iPad pro screen size for main page only ===== */
+  @media(max-width: 1024px) {
+    body {
+      font-size: 1.5rem;
+    }
+
+    section#slogan {
+      padding-top: 150px;
+    }
+
+    #recommendation .card {
+      margin-right: 1%;
+    }
+
+    #recommendation {
+      padding: 100px;
+    }
+
+    #recommendation .row {
+      padding: 0;
+    }
+
+    .image_right {
+      position: relative;
+      bottom: 90px;
+    }
+  }
+
+/*=================================== 
+  ===== Responsive for iPad screen size for main page only ===== */
+  @media(max-width: 768px) {
+    header{
+      text-align: center;
+    }
+
+    nav {
+      float: none;
+      text-align: center;
+    }
+
+    section#slogan {
+      text-align: center;
+      padding-top: 200px;
+    }
+
+    .description_left, .image_right {
+      width: 100%;
+    }
+
+    #recommendation .card {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    #slogan .btn {
+      display: block;
+      margin: 50px 0;
+    }
+
+    #recommendation h2, #recommendation p {
+      font-size: 3rem;
+    }
+  }
